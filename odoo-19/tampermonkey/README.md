@@ -4,7 +4,7 @@
 
 [`odoo-hide-chatter.user.js`](odoo-hide-chatter.user.js) adds a "Hide chatter" button (bottom right) and the Alt+Shift+C shortcut to Odoo 19 forms. The chatter disappears and the form takes the full width. The choice is remembered after a reload. Labels follow the Odoo interface language (French or English).
 
-Step-by-step video (in French): [YouTube link coming soon]
+Step-by-step video (in French): https://youtu.be/SwyzUJZPM3w
 
 ### Installation
 
