@@ -1,4 +1,4 @@
-# Scripts Tampermonkey
+# Scripts Tampermonkey pour Odoo 19
 
 ## Odoo : masquer le panneau de discussion
 
@@ -10,7 +10,7 @@ Vidéo pas à pas : [lien YouTube à venir]
 
 1. Installez [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) dans le navigateur qui porte votre application Odoo (Chrome ou Edge).
 2. Dans les détails de l'extension (`chrome://extensions` ou `edge://extensions`, Tampermonkey, Détails), activez « Autoriser les scripts utilisateur ».
-3. Ouvrez [le script en version brute](https://raw.githubusercontent.com/Asmozia/scripts-utiles/main/tampermonkey/odoo-masquer-discussion.user.js) : Tampermonkey propose de l'installer. Vous pouvez aussi le copier, puis dans Tampermonkey : « Créer un nouveau script… », tout remplacer par le contenu copié, Fichier, Enregistrer.
+3. Ouvrez [le script en version brute](https://raw.githubusercontent.com/Asmozia/tools/main/odoo-19/tampermonkey/odoo-masquer-discussion.user.js) : Tampermonkey propose de l'installer. Vous pouvez aussi le copier, puis dans Tampermonkey : « Créer un nouveau script… », tout remplacer par le contenu copié, Fichier, Enregistrer.
 4. Remplacez la ligne `@match` par l'adresse de votre Odoo, en gardant `https://` au début et `/*` à la fin :
 
    ```
