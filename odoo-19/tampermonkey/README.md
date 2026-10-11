@@ -1,20 +1,20 @@
-# Scripts Tampermonkey pour Odoo 19
+# Tampermonkey scripts for Odoo 19
 
-## Odoo : masquer le panneau de discussion
+## Hide the chatter
 
-[`odoo-masquer-discussion.user.js`](odoo-masquer-discussion.user.js) ajoute sur les fiches Odoo 19 un bouton « Masquer la discussion » (en bas à droite) et le raccourci Alt+Maj+C. Le panneau de discussion disparaît et la fiche prend toute la largeur. Le choix est mémorisé après un rechargement.
+[`odoo-hide-chatter.user.js`](odoo-hide-chatter.user.js) adds a "Hide chatter" button (bottom right) and the Alt+Shift+C shortcut to Odoo 19 forms. The chatter disappears and the form takes the full width. The choice is remembered after a reload. Labels follow the Odoo interface language (French or English).
 
-Vidéo pas à pas : [lien YouTube à venir]
+Step-by-step video (in French): [YouTube link coming soon]
 
 ### Installation
 
-1. Installez [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) dans le navigateur qui porte votre application Odoo (Chrome ou Edge).
-2. Dans les détails de l'extension (`chrome://extensions` ou `edge://extensions`, Tampermonkey, Détails), activez « Autoriser les scripts utilisateur ».
-3. Ouvrez [le script en version brute](https://raw.githubusercontent.com/Asmozia/tools/main/odoo-19/tampermonkey/odoo-masquer-discussion.user.js) : Tampermonkey propose de l'installer. Vous pouvez aussi le copier, puis dans Tampermonkey : « Créer un nouveau script… », tout remplacer par le contenu copié, Fichier, Enregistrer.
-4. Remplacez la ligne `@match` par l'adresse de votre Odoo, en gardant `https://` au début et `/*` à la fin :
+1. Install [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) in the browser that runs your Odoo app (Chrome or Edge).
+2. In the extension details (`chrome://extensions` or `edge://extensions`, Tampermonkey, Details), turn on "Allow user scripts".
+3. Open [the raw script](https://raw.githubusercontent.com/Asmozia/tools/main/odoo-19/tampermonkey/odoo-hide-chatter.user.js): Tampermonkey offers to install it. You can also copy it, then in Tampermonkey: "Create a new script...", replace everything with the copied content, File, Save.
+4. Replace the `@match` line with the address of your Odoo, keeping `https://` at the start and `/*` at the end:
 
    ```
-   // @match        https://mon-entreprise.odoo.com/*
+   // @match        https://my-company.odoo.com/*
    ```
 
-5. Enregistrez, puis rechargez Odoo.
+5. Save, then reload Odoo.

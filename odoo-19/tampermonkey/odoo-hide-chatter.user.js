@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Odoo : masquer le panneau de discussion
+// @name         Odoo 19: hide the chatter
 // @namespace    https://www.asmozia.com/
-// @version      1.0.0
-// @description  Masque ou affiche le panneau de discussion (chatter) des fiches Odoo 19, par un bouton ou Alt+Maj+C, et élargit la fiche dans l'espace libéré.
+// @version      1.1.0
+// @description  Hides or shows the chatter on Odoo 19 forms, with a button or Alt+Shift+C, and widens the form into the freed space.
 // @author       Asmozia
-// @match        https://votre-domaine.odoo.com/*
+// @match        https://your-domain.odoo.com/*
 // @run-at       document-start
 // @grant        none
 // ==/UserScript==
@@ -16,7 +16,13 @@
     const HIDDEN_CLASS = "asm-chatter-hidden";
     const CHATTER = ".o-mail-Form-chatter";
 
-    // Le chatter masqué libère sa colonne : la fiche reprend toute la largeur.
+    // Labels follow the Odoo interface language (French or English).
+    const FR = (document.documentElement.lang || navigator.language || "").toLowerCase().startsWith("fr");
+    const LABELS = FR
+        ? { show: "Afficher la discussion", hide: "Masquer la discussion", shortcut: "Raccourci : Alt+Maj+C" }
+        : { show: "Show chatter", hide: "Hide chatter", shortcut: "Shortcut: Alt+Shift+C" };
+
+    // A hidden chatter frees its column: the form takes the full width.
     const style = document.createElement("style");
     style.textContent = `
         html.${HIDDEN_CLASS} ${CHATTER} { display: none !important; }
@@ -44,8 +50,8 @@
         const button = document.getElementById("asm-chatter-toggle");
         if (button) {
             button.innerHTML = hidden
-                ? '<i class="fa fa-comments"></i> Afficher la discussion'
-                : '<i class="fa fa-eye-slash"></i> Masquer la discussion';
+                ? `<i class="fa fa-comments"></i> ${LABELS.show}`
+                : `<i class="fa fa-eye-slash"></i> ${LABELS.hide}`;
         }
     };
 
@@ -54,7 +60,7 @@
         try {
             localStorage.setItem(STORAGE_KEY, hidden ? "1" : "0");
         } catch {
-            // Stockage indisponible : l'état ne vaut que pour la page en cours.
+            // Storage unavailable: the state only lasts for the current page.
         }
         apply(hidden);
     };
@@ -69,13 +75,13 @@
         button.id = "asm-chatter-toggle";
         button.type = "button";
         button.className = "btn btn-secondary btn-sm";
-        button.title = "Raccourci : Alt+Maj+C";
+        button.title = LABELS.shortcut;
         button.addEventListener("click", toggle);
         document.body.appendChild(button);
         apply(isHidden());
     };
 
-    // Odoo est une application monopage : le bouton n'apparaît que sur une fiche avec chatter.
+    // Odoo is a single-page app: the button only shows on a form that has a chatter.
     const refresh = () => {
         mountButton();
         const button = document.getElementById("asm-chatter-toggle");

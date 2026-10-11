@@ -1,13 +1,13 @@
-# Outils Asmozia pour Odoo
+# Asmozia tools for Odoo
 
-Petits outils partagés par [Asmozia](https://www.asmozia.com), intégrateur Odoo, pour faciliter le quotidien des utilisateurs d'Odoo.
+Small tools shared by [Asmozia](https://www.asmozia.com), an Odoo integrator, to make everyday work in Odoo easier.
 
-Les outils sont rangés **par version d'Odoo** : un script écrit pour une version peut ne pas fonctionner sur une autre (l'interface et ses classes changent d'une version à l'autre). Prenez le dossier de votre version.
+Tools are sorted **by Odoo version**: a script written for one version may not work on another, since the interface and its CSS classes change between versions. Pick the folder matching your version.
 
-| Version | Dossier | Contenu |
+| Version | Folder | Content |
 |---|---|---|
-| Odoo 19 | [odoo-19/tampermonkey](odoo-19/tampermonkey/) | Scripts utilisateur pour l'extension Tampermonkey (Chrome, Edge) |
+| Odoo 19 | [odoo-19/tampermonkey](odoo-19/tampermonkey/) | User scripts for the Tampermonkey browser extension (Chrome, Edge) |
 
-N'installez que des scripts dont vous connaissez la source : un script agit sur les pages où il s'exécute. Ceux de ce dépôt sont lisibles en entier avant installation.
+Only install scripts from a source you trust: a script runs on the pages it matches. The scripts in this repository are short and readable in full before installing.
 
-Licence : [MIT](LICENSE).
+License: [MIT](LICENSE).
